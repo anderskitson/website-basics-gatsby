@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
+import Archive from './archive'
 import './layout.css'
 
 const Layout = ({ children }) => (
@@ -13,7 +14,6 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
-            content
           }
         }
       }
@@ -23,7 +23,7 @@ const Layout = ({ children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: data.site.siteMetadata.content },
+            { name: 'description', content: 'Sample' },
             { name: 'keywords', content: 'sample, something' },
           ]}
         >
@@ -40,6 +40,7 @@ const Layout = ({ children }) => (
         >
           {children}
         </div>
+        <Archive />
       </>
     )}
   />
