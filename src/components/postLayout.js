@@ -5,8 +5,9 @@ import Layout from './layout'
 class postLayout extends Component {
   render() {
     const { markdownRemark } = this.props.data
+    const { location } = this.props
     return (
-      <Layout>
+      <Layout location={location}>
         <h1>{markdownRemark.frontmatter.title}</h1>
         <h2>{markdownRemark.frontmatter.date}</h2>
         <div
