@@ -9,7 +9,7 @@ class postLayout extends Component {
     return (
       <Layout location={location}>
         <h1>{markdownRemark.frontmatter.title}</h1>
-        <h2>{markdownRemark.frontmatter.date}</h2>
+        {/* <h2>{markdownRemark.frontmatter.date}</h2> */}
         <div
           dangerouslySetInnerHTML={{
             __html: markdownRemark.html,
@@ -28,7 +28,6 @@ export const query = graphql`
       html
       frontmatter {
         title
-        date
         slug
       }
     }

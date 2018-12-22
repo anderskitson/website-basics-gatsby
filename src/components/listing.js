@@ -4,17 +4,11 @@ import styled from 'styled-components'
 
 const LISTING_QUERY = graphql`
   query BlogPostArchive1 {
-    allMarkdownRemark(
-      limit: 10
-      sort: { order: DESC, fields: [frontmatter___date] }
-    ) {
+    allMarkdownRemark(limit: 10) {
       edges {
         node {
-          excerpt
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            slug
+            bio
           }
         }
       }
@@ -50,12 +44,12 @@ const Listing = () => (
     render={({ allMarkdownRemark }) =>
       allMarkdownRemark.edges.map(({ node }) => (
         <Post key={node.frontmatter.slug}>
-          <Link to={`/posts${node.frontmatter.slug}`}>
+          <Link to={`/team${node.frontmatter.slug}`}>
             <h2>{node.frontmatter.title}</h2>
           </Link>
-          <p>{node.frontmatter.date}</p>
-          <p>{node.excerpt}</p>
-          <Link class="read-more" to={`/posts${node.frontmatter.slug}`}>
+          {/* <p>{node.frontmatter.date}</p> */}
+          {/* <p>{node.excerpt}</p> */}
+          <Link class="read-more" to={`/team${node.frontmatter.slug}`}>
             Read More
           </Link>
         </Post>
