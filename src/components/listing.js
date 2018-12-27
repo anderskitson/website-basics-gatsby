@@ -7,6 +7,7 @@ const LISTING_QUERY = graphql`
     allMarkdownRemark(limit: 10) {
       edges {
         node {
+          excerpt
           frontmatter {
             title
           }
@@ -48,7 +49,7 @@ const Listing = () => (
             <h2>{node.frontmatter.title}</h2>
           </Link>
           {/* <p>{node.frontmatter.date}</p> */}
-          {/* <p>{node.excerpt}</p> */}
+          <p>{node.excerpt}</p>
           <Link class="read-more" to={`/team${node.frontmatter.title}`}>
             Read More
           </Link>
