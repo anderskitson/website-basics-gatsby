@@ -8,7 +8,7 @@ const LISTING_QUERY = graphql`
       edges {
         node {
           frontmatter {
-            bio
+            title
           }
         }
       }
@@ -43,13 +43,13 @@ const Listing = () => (
     query={LISTING_QUERY}
     render={({ allMarkdownRemark }) =>
       allMarkdownRemark.edges.map(({ node }) => (
-        <Post key={node.frontmatter.slug}>
-          <Link to={`/team${node.frontmatter.slug}`}>
+        <Post key={node.frontmatter.title}>
+          <Link to={`/team${node.frontmatter.title}`}>
             <h2>{node.frontmatter.title}</h2>
           </Link>
           {/* <p>{node.frontmatter.date}</p> */}
           {/* <p>{node.excerpt}</p> */}
-          <Link class="read-more" to={`/team${node.frontmatter.slug}`}>
+          <Link class="read-more" to={`/team${node.frontmatter.title}`}>
             Read More
           </Link>
         </Post>

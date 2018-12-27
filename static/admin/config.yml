@@ -13,5 +13,5 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label:"Team Member", name: "title", widget: "string"}
-      - {label:"Bio", name: "bio", widget: "markdown"}
+      - {label:"title", name: "title", widget: "string"}
+      - {label:"body", name: "body", widget: "markdown"}
